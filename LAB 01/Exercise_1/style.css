@@ -1,0 +1,25 @@
+/* Heading 2 Configuration */
+hr {
+    width: 50%;
+    text-align: left;
+    margin-left: 0;
+}
+
+.timeline {
+    text-align: right;
+}
+
+body {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+h2 {
+    color: green;
+}
+
+h3 {
+    color: blue;
+}
