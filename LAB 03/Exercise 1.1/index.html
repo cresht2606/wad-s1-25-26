@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Form Validator</title>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Sign Up Form</h2>
+        <form id="signupForm">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" placeholder="Enter username">
+                <div class="error-message" id="usernameError"></div>
+            </div> <br>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" id="email" placeholder="Enter email">
+                <div class="error-message" id="emailError"></div>
+            </div> <br>
+            
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="pass" placeholder="Enter password">
+                <div class="error-message" id="passwordError"></div>
+            </div> <br>
+
+            <div class="form-group">
+                <label for="repassword">Confirm Password:</label>
+                <input type="password" id="repass" placeholder="Re-enter password">
+                <div class="error-message" id="repasswordError"></div>
+            </div> <br>
+
+            <button type="submit" id="submitBtn" disabled>Sign Up</button>
+        </form>
+    </div>
+
+    <script>
+        // Validation map (ensure all values are met up)
+        const validation = {
+            username: false,
+            email: false,
+            password: false,
+            repassword: false
+        };
+
+        // Username validation
+        function validateUsername() {
+            const username = document.getElementById("username").value;
+
+            if (!(username.length >= 4 && username.length <= 20 && /^[a-zA-Z0-9_]+$/.test(username))) {
+                showError("username", "Username must be 4-20 characters and alphanumeric.");
+                validation.username = false;
+            } else {
+                clearError("username");
+                validation.username = true;
+            }
+            validateForm();
+        }
+
+        // Email validation
+        function validateEmail() {
+            const email = document.getElementById("email").value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (email == "") {
+                showError("email", "Email is required.");
+                validation.email = false;
+            } else if (!emailRegex.test(email)) {
+                showError("email", "Please enter a valid email address.");
+                validation.email = false;
+            } else {
+                clearError("email");
+                validation.email = true;
+            }
+            validateForm();
+        }
+
+        // Password validation
+        function validatePassword() {
+            const password = document.getElementById("pass").value;
+
+            if (password.length < 8) {
+                showError("password", "Password must be at least 8 characters.");
+                validation.password = false;
+            } else if (!/[0-9]/.test(password)) {
+                showError("password", "Password must contain at least one number.");
+                validation.password = false;
+            } else if (!/[A-Z]/.test(password)) {
+                showError("password", "Password must contain at least one uppercase letter.");
+                validation.password = false;
+            } else {
+                clearError("password");
+                validation.password = true;
+            }
+            validateForm();
+        }
+
+        // Password match validation
+        function validatePasswordMatch() {
+            const pass1 = document.getElementById("pass").value;
+            const pass2 = document.getElementById("repass").value;
+
+            if (pass1 !== pass2) {
+                showError("repass", "Passwords do not match.");
+                validation.repassword = false;
+            } else {
+                clearError("repass");
+                validation.repassword = true;
+            }
+            validateForm();
+        }
+
+        // Show error message
+        function showError(fieldId, message) {
+            const field = document.getElementById(fieldId);
+            const errorMessage = document.getElementById(fieldId + "Error");
+
+            if (errorMessage && field){
+                errorMessage.textContent = message;
+                errorMessage.classList.add("show");
+                field.classList.add("invalid");
+                field.classList.remove("valid");
+            }
+        }
+
+        // Clear error message
+        function clearError(fieldId) {
+            const field = document.getElementById(fieldId);
+            const errorMessage = document.getElementById(fieldId + "Error");
+            if (field && errorMessage){
+                errorMessage.textContent = "";
+                errorMessage.classList.remove("show");
+                field.classList.add("valid");
+                field.classList.remove("invalid");
+            }
+        }
+
+        // Validate form and enable/disable submit button
+        function validateForm() {
+            const submitButton = document.getElementById("submitBtn");
+            const isFormValid = Object.values(validation).every(state => state === true);
+            submitButton.disabled = !isFormValid; // Disable if any validation is false
+        }
+
+        // Add event listeners for real-time validation
+        document.getElementById("username").addEventListener("input", validateUsername);
+        document.getElementById("email").addEventListener("input", validateEmail);
+        document.getElementById("pass").addEventListener("input", validatePassword);
+        document.getElementById("repass").addEventListener("input", validatePasswordMatch);
+
+        // Handle form submission
+        document.getElementById('signupForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent default form submission
+
+            if (Object.values(validation).every(state => state === true)) {
+                alert("Form submitted successfully!");
+            } else {
+                alert("Please fill out all fields correctly.");
+            }
+        });
+    </script>
+</body>
+</html>
