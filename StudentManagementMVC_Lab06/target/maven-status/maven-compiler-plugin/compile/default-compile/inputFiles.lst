@@ -1,0 +1,12 @@
+/home/cresht/NetBeansProjects/StudentManagementMVC_Lab06/src/main/java/com/student/dao/UserDAO.java
+/home/cresht/NetBeansProjects/StudentManagementMVC_Lab06/src/main/java/com/mycompany/student/management/mvc/resources/JakartaEE10Resource.java
+/home/cresht/NetBeansProjects/StudentManagementMVC_Lab06/src/main/java/com/student/controller/StudentController.java
+/home/cresht/NetBeansProjects/StudentManagementMVC_Lab06/src/main/java/com/student/filter/AuthFilter.java
+/home/cresht/NetBeansProjects/StudentManagementMVC_Lab06/src/main/java/com/student/dao/StudentDAO.java
+/home/cresht/NetBeansProjects/StudentManagementMVC_Lab06/src/main/java/com/student/controller/DashboardController.java
+/home/cresht/NetBeansProjects/StudentManagementMVC_Lab06/src/main/java/com/student/model/Student.java
+/home/cresht/NetBeansProjects/StudentManagementMVC_Lab06/src/main/java/com/student/model/User.java
+/home/cresht/NetBeansProjects/StudentManagementMVC_Lab06/src/main/java/com/mycompany/student/management/mvc/JakartaRestConfiguration.java
+/home/cresht/NetBeansProjects/StudentManagementMVC_Lab06/src/main/java/com/student/controller/LogoutController.java
+/home/cresht/NetBeansProjects/StudentManagementMVC_Lab06/src/main/java/com/student/filter/AdminFilter.java
+/home/cresht/NetBeansProjects/StudentManagementMVC_Lab06/src/main/java/com/student/controller/LoginController.java
