@@ -1,0 +1,117 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #fff;
+    color: #000;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Main Box */
+.box {
+    max-width: 900px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+/* Container style for a horizontal layout */
+.container {
+    display: flex;
+    flex-direction: row; /* Arrange items horizontally */
+    width: 100%;
+    min-height: 100vh; /* Ensure the container takes full height */
+}
+
+/* Header and footer styles */
+header {
+    width: 100%;
+    align-items: center;
+    background-color: #f7e7b2;
+    padding: 20px;
+    border-bottom: 3px solid #cc9900;
+}
+
+footer {
+    background-color: #f7e7b2;
+    text-align: center;
+    padding: 10px;
+    color: #333;
+    font-size: 0.9rem;
+    border-top: 3px solid #cc9900;
+}
+
+/* Sidebar and main content styles */
+.right-sidebar {
+    order: 2;
+    flex: 1; /* Take 1 part of the space */
+    background-color: #fcead1; /* Light peach background */
+    padding: 20px;
+    border-left: 3px solid #cc9900;
+    margin: 50px 50px 300px 50px;
+}
+
+.right-sidebar h3 {
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.right-sidebar b {
+    color: #a33b00;
+}
+
+.main {
+    flex: 2;
+    padding-right: 30px;
+    margin: 30px 30px 30px 30px;
+}
+
+.main h2 {
+    color: #000;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.main ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.main ul li {
+    margin-bottom: 6px;
+}
+
+.main ul li a {
+    color: #2a4d9b;
+    text-decoration: none;
+}
+
+.main ul li a:hover {
+    text-decoration: underline;
+}
+
+.main h3 {
+    color: #000;
+    margin: 15px 0 10px 0;
+}
+
+.main p {
+    margin-bottom: 10px;
+}
+
+/* Responsive layout: Stack everything vertically on small screens */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    .left-sidebar, .main, .right-sidebar {
+        width: 100%; /* Make each section full width */
+    }
+}

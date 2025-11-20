@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="style.css">
+    <!-- Bootstrap Style -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>IU Survey</title>
+</head>
+
+<body>
+    <div class = "container mt-3">
+        <form>
+            <img src = "images/logo.png">
+            <br>
+            <!-- Survey title -->
+            <div class = "survey"> 
+                <h2 id = "title"> Survey </h2>
+                <p> If you have a moment, we'd appreciate it if you would fill out this survey. </p>
+            </div>
+
+            <!-- Information section -->
+            <div class = "in4"> 
+                <h3 id = "title"> Your information: </h3>
+
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <label for="fname" class="form-label"><strong>First Name</strong></label>
+                    </div>
+                    <div class="col-md-5">
+                        <input type="text" class="form-control" id="fname">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <label for="lname" class="form-label"><strong>Last Name</strong></label>
+                    </div>
+                    <div class="col-md-5">
+                        <input type="text" class="form-control" id="lname">
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <label for="email" class="form-label"><strong>Email</strong></label>
+                    </div>
+                    <div class="col-md-5">
+                        <input type="text" class="form-control" id="email">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <label for="date" class="form-label"><strong>Date Of Birth</strong></label>
+                    </div>
+                    <div class="col-md-5">
+                        <input type="date" class="form-control" id="date">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Popularity section -->
+            <div class="radio">
+                <h3 id="title">How did you hear about us?</h3>
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="engine" class="form-check-input" name="source">
+                    <label for="engine" class="form-check-label">Search engine</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="mouth" class="form-check-input" name="source">
+                    <label for="mouth" class="form-check-label">Word of mouth</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="media" class="form-check-input" name="source">
+                    <label for="media" class="form-check-label">Social Media</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="other" class="form-check-input" name="source">
+                    <label for="other" class="form-check-label">Other</label>
+                </div>
+            </div>
+
+            <!-- Checkbox section -->
+            <div class = "checkbox"> 
+                <h3 id = "title"> Would you like to receive announcements about new CDs and special offers? </h3>
+                <input type = "checkbox" id = "like"> <label for = "like"> YES, I'd like that. </label> <br>
+                <input type = "checkbox" id = "announcement"> <label for = "announcement"> YES, please send me email announcements.</label> 
+            </div>
+
+            <!-- Contact section -->
+            <label for = "contact"> Please contact me by: </label> 
+                <select id = "contact" name = "contact"> 
+                    <option value = "email_postal"> Email or postal mail </option>
+                    <option value = "email"> Email only </option>
+                    <option value = "postal"> Postal mail </option>
+                </select> <br>
+
+            <!-- Submit section -->
+            <button type = "submit" class = "btn btn-primary"> Submit </button>
+        </form>
+    </div>
+</body>
+</html>
